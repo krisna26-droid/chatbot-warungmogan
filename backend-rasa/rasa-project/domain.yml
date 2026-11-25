@@ -1,0 +1,109 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - ask_menu
+  - ask_price
+  - ask_recomendation
+  - ask_spicy
+  - ask_drink
+  - ask_operational_hours
+  - ask_location
+  - ask_payment
+  - pesan_menu_bot
+  - batal_pesan
+  - cek_keranjang
+
+entities:
+  - menu
+  - kategori
+  - rasa
+  - metode_pembayaran
+  - nama_menu
+  - jumlah
+  - no_meja
+  - catatan
+  - id_menu
+
+slots:
+  menu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: menu
+  kategori:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: kategori
+  rasa:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: rasa
+  metode_pembayaran:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: metode_pembayaran
+  nama_menu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nama_menu
+  jumlah:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: jumlah
+  no_meja:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: no_meja
+  catatan:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: catatan
+  id_menu:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: id_menu
+
+responses:
+  utter_greet:
+    - text: "Halo, selamat datang di Warung Mogan Vegetarian. Ada yang bisa saya bantu?"
+
+  utter_goodbye:
+    - text: "Terima kasih telah menggunakan layanan kami. Sampai jumpa kembali."
+
+  utter_thank_you:
+    - text: "Sama-sama, senang dapat membantu."
+
+  utter_operational_hours:
+    - text: "Warung buka setiap hari pukul 07.00-22.00 WITA."
+
+  utter_location:
+    - text: "Warung Mogan Vegetarian beralamat di Jalan Mudutaki No. 99x, Dalung."
+
+  utter_payment:
+    - text: "Kami menerima pembayaran tunai, debit, kredit, QRIS, maupun transfer."
+
+actions:
+  - action_tampilkan_menu
+  - action_cek_harga
+  - action_rekomendasi_menu
+  - action_menu_pedas
+  - action_daftar_minuman
+  - action_pesan_menu_bot
+  - action_proses_pesanan
+  - action_batal_pesanan
+  - action_cek_keranjang
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

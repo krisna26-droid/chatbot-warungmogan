@@ -1,0 +1,98 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - halo warung mogan
+    - selamat pagi min
+    - permisi mau tanya
+
+- intent: goodbye
+  examples: |
+    - udah cukup kak, pamit ya
+    - oke segitu aja, bye
+    - sampai jumpa lagi kak
+
+- intent: thank_you
+  examples: |
+    - makasih infonya ya kak
+    - terima kasih banyak bantuannya
+    - oke siap, suksma kak
+
+- intent: ask_menu
+  examples: |
+    - jualan apa aja di sini?
+    - boleh spill daftar menunya
+    - ada tipat apa aja di warung mogan?
+    - kategori menu apa aja yang tersedia?
+    - mau lihat daftar [dessert](kategori) dong
+
+- intent: pesan_menu_bot
+  examples: |
+    - saya mau pesan [nasi campur bali](nama_menu) [2](jumlah) porsi
+    - tolong bungkusin [es daluman](nama_menu) [1](jumlah) ya
+    - order [sate jamur](nama_menu) [2](jumlah) makan sini
+    - mau [nasi goreng spesial](nama_menu) [1](jumlah) bungkus untuk meja [3](no_meja)
+    - tambahin [es teler](nama_menu) [1](jumlah) gelas dong
+
+- intent: batal_pesan
+  examples: |
+    - gak jadi pesan deh kak
+    - tolong batalkan [nasi bakar](nama_menu) yang tadi
+    - cancel pesanan meja [2](no_meja) ya
+    - hapus semua pesanan saya di keranjang
+
+- intent: ask_price
+  examples: |
+    - berapaan harga [tipat kables](nama_menu)?
+    - [es mogan spesial](nama_menu) harganya berapa ya?
+    - [minuman](kategori) yang paling murah apa?
+    - [makanan](kategori) dengan harga paling mahal apa kak?
+    - menu paling murah di sini apa ya?
+
+- intent: cek_keranjang
+  examples: |
+    - tolong tampilkan rincian pesanan saya
+    - total sementara meja [2](no_meja) berapa?
+    - sudah pesan apa aja tadi ya?
+
+- intent: ask_recomendation
+  examples: |
+    - makanan yang paling recommended di sini apa?
+    - bingung nih, pilihin menu andalan dong
+    - minuman best seller di warung mogan apa ya?
+    - dessert penutup yang enak apa kak?
+    - minuman yang cocok diminum bareng [nasi bakar](nama_menu) apa ya?
+
+- intent: ask_spicy
+  examples: |
+    - ada pilihan makanan yang [pedas](rasa) gak?
+    - lagi pengen makan yang [pedas](rasa) nih
+    - kalau menu yang [tidak pedas](rasa) ada apa aja?
+
+- intent: ask_drink
+  examples: |
+    - ada minuman segar gak kak?
+    - pengen yang dingin dan seger nih
+    - pilihan jus buahnya ada apa aja?
+
+- intent: ask_operational_hours
+  examples: |
+    - jam berapa warungnya mulai buka?
+    - malam tutup jam berapa ya kak?
+    - kalau hari minggu tetap buka?
+    - hai kak, masih buka?
+
+
+- intent: ask_location
+  examples: |
+    - posisi warung mogan di sebelah mana?
+    - minta alamat lengkapnya dong kak
+    - daerah dalung sebelah mana ya?
+
+- intent: ask_payment
+  examples: |
+    - pembayarannya bisa non tunai gak?
+    - bisa bayar pakai [QRIS](metode_pembayaran) atau [transfer](metode_pembayaran)?
+    - kalau bayar pakai [debit](metode_pembayaran) bisa?
+    - terima pembayaran [tunai](metode_pembayaran) kan?

@@ -1,0 +1,79 @@
+version: "3.1"
+
+stories:
+  # -------------------------------------------------------------
+  # Skenario 1: Percakapan Normal (Sapa -> Tanya Menu -> Tanya Harga -> Selesai)
+  # -------------------------------------------------------------
+  - story: alur lengkap tanya menu dan harga
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_menu
+      - action: action_tampilkan_menu
+      - intent: ask_price
+      - action: action_cek_harga
+      - intent: thank_you
+      - action: utter_thank_you
+
+  # -------------------------------------------------------------
+  # Skenario 2: Langsung Bertanya Harga Tanpa Sapaan Awal
+  # -------------------------------------------------------------
+  - story: langsung tanya harga menu
+    steps:
+      - intent: ask_price
+      - action: action_cek_harga
+
+  # -------------------------------------------------------------
+  # Skenario 3: Meminta Rekomendasi lalu Bertanya Daftar Minuman
+  # -------------------------------------------------------------
+  - story: minta rekomendasi lalu minuman
+    steps:
+      - intent: ask_recomendation
+      - action: action_rekomendasi_menu
+      - intent: ask_drink
+      - action: action_daftar_minuman
+      - intent: goodbye
+      - action: utter_goodbye
+
+  # -------------------------------------------------------------
+  # Skenario 4: Tanya Menu Spesifik Langsung Tanpa Sapaan
+  # -------------------------------------------------------------
+  - story: langsung tanya menu makanan
+    steps:
+      - intent: ask_menu
+      - action: action_tampilkan_menu
+
+  # -------------------------------------------------------------
+  # Skenario 5: Tanya Menu Pedas dan Informasi Lokasi/Jam Buka
+  # -------------------------------------------------------------
+  - story: tanya menu pedas lalu lokasi dan jam buka
+    steps:
+      - intent: ask_spicy
+      - action: action_menu_pedas
+      - intent: ask_location
+      - action: utter_location
+      - intent: ask_operational_hours
+      - action: utter_operational_hours
+
+  # -------------------------------------------------------------
+  # Skenario 6: Alur Pemesanan Menu via Chatbot Langsung ke Keranjang
+  # -------------------------------------------------------------
+  - story: alur pesan menu via chatbot
+    steps:
+      - intent: pesan_menu_bot
+      - action: action_proses_pesanan
+
+  # -------------------------------------------------------------
+  # Skenario 7: Pesan Menu lalu Cek Keranjang atau Batalkan Pesanan
+  # -------------------------------------------------------------
+  - story: pesan menu lalu cek keranjang
+    steps:
+      - intent: pesan_menu_bot
+      - action: action_proses_pesanan
+      - intent: cek_keranjang
+      - action: action_cek_keranjang
+
+  - story: batalkan pesanan via chatbot
+    steps:
+      - intent: batal_pesan
+      - action: action_batal_pesanan

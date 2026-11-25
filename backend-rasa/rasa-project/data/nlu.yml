@@ -1,0 +1,805 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - halo
+    - hai
+    - hi
+    - hallo
+    - p
+    - permisi
+    - selamat pagi
+    - selamat siang
+    - selamat sore
+    - selamat malam
+    - pagi kak
+    - siang kak
+    - halo kak
+    - halo min
+    - permisi kak
+    - hai bot
+    - halo, mau tanya dong
+    - hei
+    - woy
+    - we
+
+- intent: goodbye
+  examples: |
+    - sampai jumpa
+    - bye bye
+    - dadah
+    - bye
+    - sampai ketemu lagi
+    - udah itu aja
+    - cukup sekian
+    - saya pamit dulu
+    - good bye
+    - dah dulu ya
+
+- intent: thank_you
+  examples: |
+    - terima kasih
+    - terimakasih
+    - makasih
+    - makasih yaa
+    - thank you
+    - thanks
+    - makasih banyak kak
+    - oke makasih
+    - sip makasih
+    - terima kasih banyak
+    - mks y
+    - tengs
+    - suksma
+    - arigato
+
+- intent: ask_menu
+  examples: |
+    - ada menu apa aja
+    - menu apa yang tersedia
+    - mau liat daftar menuu
+    - lihat menu
+    - minta daftar menu
+    - tampilkan menu
+    - menunya apa saja
+    - boleh lihat menu
+    - ada makanan apa aja
+    - apa saja yang dijual
+    - jualan apa aja di warung mogan?
+    - di sini jual makanan apa aja kak?
+    - daftar menu dong
+    - apa saja menu yang ada di sini
+    - lihat daftar menu makanan
+    - ada makanan apa saja hari ini
+    - saya mau lihat list menu nabati
+    - mau menu
+    - menu dong
+    - menu mana?
+    - ada menunya gak
+    - menu
+    - ada menu?
+    - liat menu
+    - pengen menunya
+    - liat menu dulu
+    - ada makanan apa
+    - mau makan
+    - ada menu [dessert](kategori) apa aja?
+    - mau lihat daftar [dessert](kategori)
+    - daftar [cemilan](kategori) apa aja kak?
+    - ada [cemilan](kategori) apa di sini?
+    - ada [makanan](kategori) apa aja di warung mogan?
+    - kategori menu apa aja yang ada di sini?
+    - ada varian tipat apa aja?
+    - di sini ada nasi apa aja kak?
+    - pilihan mie atau bakmie ada apa aja?
+    - ada menu rujak apa aja di warung mogan?
+
+- intent: pesan_menu_bot
+  examples: |
+    - mau pesan [nasi kuning](nama_menu) [1](jumlah) porsi
+    - pesan [genyol vegan](nama_menu) [1](jumlah)
+    - saya mau order [es teh](nama_menu) [2](jumlah) gelas
+    - tolong pesankan [sate jamur](nama_menu) [3](jumlah) porsi
+    - beli [nasi bakar](nama_menu) [1](jumlah)
+    - pesan [nasi kuning](nama_menu) [1](jumlah) porsi
+    - pesan [nasi kuning](nama_menu) [2](jumlah)
+    - mau pesen [nasi kuning](nama_menu)
+    - mau pesen [nasi kuning](nama_menu) [1](jumlah) gak pedes
+    - pesan [es jeruk](nama_menu) [1](jumlah)
+    - [es jeruk](nama_menu) [1](jumlah)
+    - pesan [es daluman](nama_menu) [2](jumlah)
+    - [es daluman](nama_menu) [2](jumlah)
+    - mau pesen [es jeruk](nama_menu) [1](jumlah) gak gula
+    - [es jeruk](nama_menu) [1](jumlah) gak gula
+    - [es teh tawar](nama_menu) [7](jumlah) yaa
+    - pesen [nasi kuning](nama_menu) yaa [2](jumlah)
+    - mau [tipat kables](nama_menu) [1](jumlah) bungkus
+    - mau [tipat kables](nama_menu) [1](jumlah) bks
+    - mau [singkong salju](nama_menu) bks ya [1](jumlah)
+    - [es mogan](nama_menu) [1](jumlah) gak es
+    - [es mogan](nama_menu) [1](jumlah) bks
+    - [es mogan](nama_menu) [1](jumlah) bungkus
+    - pesan [nasi genyol vegan](nama_menu) [5](jumlah) porsi
+    - beli [nasi genyol vegan](nama_menu) [1](jumlah) bungkus
+    - [es mogan](nama_menu) [1](jumlah)
+    - tolong pesankan [es mogan](nama_menu) sebanyak [2](jumlah)
+    - [nasi genyol vegan](nama_menu) [5](jumlah) yaa bks
+    - [nasi genyol vegan](nama_menu) [1](jumlah) yaa gak pedes
+    - [nasi bakar](nama_menu) bks
+    - [nasi bakar](nama_menu) bungkus [1](jumlah)
+    - [nasi bakar](nama_menu) gak pds
+    - [nasi bakar](nama_menu) gak pedas [1](jumlah) bks
+    - mau [nasi bakar](nama_menu) [1](jumlah)
+    - mau pesan yaa
+    - pesan disini ya
+    - pesan dong
+    - bungkusin [nasi campur bali](nama_menu) [1](jumlah) yang 15k
+    - bungkusin [nasi campur bali](nama_menu) [1](jumlah) yang 15.000
+    - bungkus [tempe penyet](nama_menu)
+    - [tempe penyet](nama_menu) [1](jumlah) makan sini
+    - [tempe penyet](nama_menu) [1](jumlah)
+    - bungkus [nasi kuning](nama_menu) [1](jumlah) yang 10.000 gak pds
+    - [nasi kuning](nama_menu) [1](jumlah) gak pds
+    - [nasi kuning](nama_menu) [1](jumlah) gak pedas
+    - [nasi kuning](nama_menu) [1](jumlah) tidak pedas
+    - [nasi kuning](nama_menu) yang 15.000 [1](jumlah) bungkus
+    - tambah [es gula](nama_menu) [1](jumlah)
+    - [es gula](nama_menu) [1](jumlah) bungkus
+    - [es gula](nama_menu) banyak es [1](jumlah) bks
+    - [es gula](nama_menu) banyak es [1](jumlah) makan sini
+    - [es gula](nama_menu) bungkus [1](jumlah)
+    - [es jeruk](nama_menu) bungkus yaa
+    - [es kelapa muda](nama_menu) [1](jumlah) bungkus
+    - [es kelapa muda](nama_menu) dong [1](jumlah)
+    - [es kelapa muda](nama_menu) [1](jumlah) yaa
+    - pesen [es kelapa muda](nama_menu) [1](jumlah)
+    - pesan [es kelapa muda](nama_menu) [1](jumlah)
+    - [es kelapa muda](nama_menu) tambahan [1](jumlah) dibungkus
+    - [es kelapa muda](nama_menu) tambah [1](jumlah) bks
+    - [es kelapa muda](nama_menu) bks [2](jumlah)
+    - pesan [nasi kuning](nama_menu) [1](jumlah) untuk meja [2](no_meja)
+
+- intent: batal_pesan
+  examples: |
+    - batalkan pesanan saya
+    - batalkan pesanan meja [1](no_meja)
+    - batalkan pesanan [es daluman](nama_menu) tadi
+    - saya mau cancel pesanan
+    - jangan jadi pesan deh
+    - kosongkan keranjang saya
+    - batalin deh
+    - batal yaa
+    - batalin semuanya
+    - mau cancel aja
+    - cancel deh
+    - [nasi kuning](nama_menu) batalin ya
+    - [es daluman](nama_menu)nya gajadi
+    - [nasi genyol](nama_menu) batal yaa
+    - cancel [soto ayam](nama_menu)
+    - gajadi deh
+    - gajadi yaa
+    - buung
+    - buung we
+    - batal batal
+    - hapus semua pesanan saya di keranjang
+    - hapus pesanan di keranjang
+    - hapus semua item di keranjang
+    - kosongkan keranjang pesanan saya
+    - hapus [nasi bakar](nama_menu) dari keranjang
+    - tolong hapus pesanan meja [2](no_meja)
+    - cancel semua yang ada di keranjang
+    - bersihkan keranjang saya
+
+- intent: ask_price
+  examples: |
+    - harga [es jeruk](nama_menu) berapa?
+    - berapa harga [genyol vegan](nama_menu)?
+    - [nasi kuning](nama_menu) berapa satu?
+    - [nasi bakar](nama_menu) harganya berapa
+    - berapa [es jeruk](nama_menu)
+    - [genyol vegan](nama_menu) berapaan
+    - harga [nasi bakar](nama_menu) berapa ya
+    - minta info harga [nasi kuning](nama_menu)
+    - kalau [es jeruk](nama_menu) harganya berapa
+    - harga menunya berapa aja
+    - berapa harga makanan di sini
+    - berapa harga [nasi kuning](nama_menu)
+    - cek harga [mie goreng](nama_menu)
+    - berapa satu porsi [sate lilit](nama_menu)
+    - info harga dong kak
+    - harga [nasi bakar](nama_menu) berapa
+    - [nasi bakar](nama_menu) brp?
+    - berapa 1 [nasi bakar](nama_menu)
+    - [nasi bakar](nama_menu)nya berapa
+    - menu termahal apa
+    - menu paling mahal apa ya
+    - apa menu yang paling mahal di sini
+    - menu dengan harga tertinggi apa
+    - harga menu paling mahal berapa
+    - [makanan](kategori) termahal apa
+    - [minuman](kategori) paling mahal apa
+    - menu termurah apa
+    - menu paling murah apa ya
+    - apa menu yang paling murah di sini
+    - menu dengan harga terendah apa
+    - harga menu paling murah berapa
+    - [makanan](kategori) termurah apa
+    - [minuman](kategori) paling murah apa
+    - yang paling murah apa kak
+    - yang paling mahal apa kak
+
+- intent: cek_keranjang
+  examples: |
+    - lihat pesanan saya
+    - apa saja yang sudah dipesan
+    - cek keranjang saya dong
+    - total belanjaan saya berapa sekarang
+    - lihat status pesanan meja [1](no_meja)
+    - apa aja dah tu
+    - coba cek pesanannya
+    - cek pesanan
+    - total sementara berapa?
+    - total sementara meja [2](no_meja) berapa?
+    - total pesanan saya berapa sekarang?
+    - total tagihan meja [1](no_meja) berapa?
+    - berapa total pesanan di keranjang?
+    - rincian pesanan saya apa aja?
+    - tampilkan daftar pesanan saya
+    - pesanan meja [3](no_meja) sudah berapa totalnya?
+    - cek total sementara dong
+    - sudah pesan apa aja tadi?
+
+- intent: ask_recomendation
+  examples: |
+    - menu favorit apa?
+    - apa yang best seller?
+    - apa menu yang paling laris?
+    - apa yang paling laris?
+    - ada rekomendasi menu?
+    - rekomendasiin makanan dong
+    - makanan apa yang enak di sini
+    - menu andalan disini apa
+    - apa yang paling banyak dipesan?
+    - bingung mau makan apa
+    - kasih saran menu dong
+    - menu yang paling enak apa?
+    - apa menu favorit di sini
+    - makanan apa yang paling enak
+    - rekomendasi dong kak yang enak dan wajib dicoba
+    - apa menu andalan warung mogan
+    - pilihkan makanan yang best seller dong
+    - apa menu best seller
+    - best seller apa
+    - best seller
+    - mau yang best seller
+    - menu best seller
+    - menu apa yang best seller disini
+    - rekomendasi menu
+    - menu paling super best seller
+    - menu yang sering dibeli
+    - menu terlaris
+    - menu yang paling laris
+    - menu ter laris
+    - yang laris
+    - yang best seller apa
+    - yang paling best apa
+    - best sellernya apa
+    - minuman favorit apa?
+    - minuman best seller di sini apa?
+    - minuman yang paling laris apa ya?
+    - rekomendasi minuman dong kak
+    - minuman andalan warung mogan apa?
+    - minuman apa yang paling enak di sini?
+    - bingung mau minum apa, kasih saran dong
+    - minuman yang paling sering dipesan apa?
+    - pilihkan minuman yang best seller dong
+    - rekomendasi minuman segar dong
+    - cemilan favorit di sini apa?
+    - rekomendasi dessert yang enak dong
+    - dessert best seller apa kak?
+    - makanan penutup yang paling enak apa?
+    - minuman yang cocok dengan [nasi bakar](nama_menu) apa?
+    - minuman yang pas buat [nasi campur bali](nama_menu) apa ya?
+    - kalau makan [nasi genyol vegan](nama_menu) enaknya minum apa?
+    - saran minuman untuk [nasi goreng spesial](nama_menu) dong
+    - teman minum [tipat plecing](nama_menu) yang enak apa?
+    - [sate jamur](nama_menu) cocoknya diminum bareng apa ya?
+    - habis makan [jamur geprek](nama_menu) enaknya minum apa?
+    - minuman yang cocok untuk menemani [nasi kuning](nama_menu)
+    - kalau pesan [bakmie bakso](nama_menu) bagusnya minum apa kak?
+    - minuman penutup yang cocok sama pesanan saya apa?
+    - dessert yang cocok setelah makan [nasi padang](nama_menu) apa ya?
+    - habis makan pedas cocoknya minum apa?
+    - makanan yang cocok dengan [es daluman](nama_menu) apa?
+    - kalau minum [kopi bali](nama_menu) enaknya makan apa ya?
+    - cemilan yang pas buat [goki coffee latte](nama_menu) apa kak?
+    - [es teler](nama_menu) cocoknya dimakan bareng apa?
+    - teman makan untuk [es jeruk](nama_menu) yang enak apa ya?
+    - makanan yang pas diminum bareng [es kelapa muda](nama_menu)
+    - kalau pesan [milk shake coklat](nama_menu) enaknya sambil makan apa?
+    - cemilan yang cocok buat nemenin [goki coffee brown sugar](nama_menu)
+    - saran makanan yang cocok dengan [juice alpokat](nama_menu) dong
+    - [teh hangat jahe](nama_menu) paling pas dimakan sama apa kak?
+    - makanan yang cocok untuk [es teh tarik](nama_menu) apa ya?
+
+- intent: ask_spicy
+  examples: |
+    - menu pedas apa aja?
+    - apakah ada menu [pedas](rasa)?
+    - mau yang [pedas](rasa)?
+    - ada makanan [pedas](rasa)
+    - yang [pedas](rasa) apa ya
+    - saya suka [pedas](rasa), ada menu apa
+    - ada yang [tidak pedas](rasa)
+    - menu yang [tidak pedas](rasa) apa aja
+    - cari makanan yang [pedas](rasa)
+    - lagi ngidam pedes nih
+    - mau yang pedas
+
+- intent: ask_drink
+  examples: |
+    - mau yang seger
+    - mau yang seger seger dong
+    - ada minuman apa aja
+    - ada minuman apa
+    - ada minuman apa aja di sini?
+    - tampilkan menu minuman dong
+    - mau minum
+    - mau lihat daftar minuman
+    - daftar [minuman](kategori) dong
+    - list [minuman](kategori)nya apa aja kak
+    - ada [minuman](kategori) apa
+    - menu [minuman](kategori) apa aja yang tersedia?
+    - mau yang dingin dingin
+    - ada minuman dingin gak?
+    - minuman yang segar apa aja ya?
+    - minuman yang seger buat siang hari apa?
+    - lagi panas nih, ada yang dingin gak?
+    - haus nih, ada apa
+    - haus banget, ada minuman apa aja?
+    - ada jus atau es apa?
+    - pilihan jus buahnya ada apa aja?
+    - di sini jual jus apa aja kak?
+    - ada es apa aja di warung mogan?
+    - es yang tersedia apa aja ya?
+    - apa aja pilihan minumannya?
+    - ada kopi gak di sini?
+    - menu kopinya ada apa aja kak?
+    - ada minuman hangat gak?
+    - lagi pengen yang hangat-hangat, ada apa?
+    - ada teh hangat atau jeruk hangat gak?
+    - jual milkshake gak kak?
+    - pilihan milkshakenya apa aja?
+    - ada minuman yang gak pakai es gak?
+    - minuman yang manis-manis ada apa aja?
+    - ada minuman yang asem seger gak?
+    - ada es teler atau es campur gak?
+    - ada minuman bersoda gak kak?
+    - boleh lihat pilihan minumannya?
+    - minumannya apa aja ya?
+
+- intent: ask_operational_hours
+  examples: |
+    - buka jam berapa?
+    - tutup jam berapa?
+    - galungan buka?
+    - tahun baru buka?
+    - jam operasional warung kapan
+    - hari minggu buka gak
+    - warungnya buka sampai jam berapa
+    - buka jam berapa ya
+    - hari ini buka?
+    - kapan tutupnya
+    - buka setiap hari?
+    - hari raya buka tidak
+
+- intent: ask_location
+  examples: |
+    - ini ada dijalan apa?
+    - warung mogan terletak dimana?
+    - ini ada di daerah mana?
+    - alamatnya dimana
+    - lokasi warung dimana
+    - alamat lengkapnya apa
+    - tempatnya di mana ya
+    - warung mogan di dalung ya
+    - share lokasi dong
+    - dekat mana ya
+
+- intent: ask_payment
+  examples: |
+    - bisa bayar pakai apa aja?
+    - bisa pakai kartu kredit?
+    - bisa cash?
+    - metode pembayarannya apa
+    - bisa bayar pakai [QRIS](metode_pembayaran)?
+    - terima [debit](metode_pembayaran) gak
+    - bisa bayar [tunai](metode_pembayaran)
+    - bayarnya bisa [transfer](metode_pembayaran)?
+    - ada pembayaran apa aja
+    - bisa [debit/kredit](metode_pembayaran)
+    - bisa scan barcode?
+    - metode pembayaran apa saja yang diterima
+    - bisa bayar pakai QRIS tidak
+    - apakah bisa transfer bank atau qris
+    - apakah menerima pembayaran tunai atau cash
+
+- lookup: menu
+  examples: |
+    - paket hemat
+    - nasi campur beras merah
+    - nasi campur bali
+    - nasi padang
+    - nasi bakar
+    - nasi goreng spesial
+    - nasi goreng pete
+    - nasi goreng terasi pete
+    - nasi goreng terasi
+    - nasi goreng kari
+    - nasi goreng cabe hijau
+    - nasi goreng biasa
+    - nasi goreng jamur
+    - nasi sela
+    - nasi genyol vegan
+    - nasi jinggo tuna
+    - nasi jinggo biasa
+    - nasi kuning
+    - bakmie bakso
+    - bakmie sosis
+    - bakmie pangsit
+    - mie ogan
+    - sate jamur
+    - tipat sate bakar
+    - tipat kables
+    - tipat plecing
+    - tipat tahu
+    - tipat potong
+    - tipat cantok
+    - tipat kuah
+    - bakso
+    - bakso spesial
+    - capcai
+    - gado-gado biasa
+    - gado-gado ekadasi
+    - jamur geprek
+    - lalapan segar
+    - terong balado
+    - terancam vegan
+    - tempe geprek
+    - terong geprek
+    - bubur ayam vegetarian
+    - bubur bali beras merah
+    - soto ayam vegetarian
+    - ramen
+    - mie kuah
+    - bihun goreng
+    - spakeju
+    - mie goreng
+    - nasi putih
+    - tempe penyet
+    - tempe panggang
+    - cah kangkung
+    - karedok
+    - serombotan
+    - gule jamur
+    - bulung buni
+    - bulung buni bumbu kables
+    - bulung biasa
+    - sayur hijau
+    - ketoprak vegan
+    - nasi tim
+    - goki coffee brown sugar
+    - goki coffee grigio
+    - goki coffee caramel
+    - goki coffee hazelnut
+    - goki coffee vanilla
+    - goki coffee latte
+    - goki coffee cappuccino
+    - goki coffee americano
+    - kopi bali
+    - kopi nescafe
+    - white coffee
+    - kopi luwak
+    - jeruk hangat
+    - jeruk nipis hangat
+    - teh hangat
+    - teh hangat jahe
+    - air hangat jahe
+    - teh tawar hangat
+    - lemon tea hangat
+    - hot milk
+    - es teler
+    - es teler spesial
+    - es campur
+    - es buah
+    - es daluman
+    - es kolak
+    - es mogan spesial
+    - es krim buah
+    - es keruk
+    - es durian
+    - es mogan
+    - es cendol
+    - es lidah buaya
+    - es jeruk
+    - es kelapa muda
+    - es gula
+    - es tea
+    - es teh tawar
+    - es teh tarik
+    - es black jack
+    - es jeruk nipis
+    - es lemon tea
+    - es dakep
+    - es teler durian
+    - susu sapi murni
+    - soda gembira
+    - es bali
+    - milk six
+    - kelapa original
+    - juice durian
+    - juice jeruk
+    - juice banana
+    - juice alpokat
+    - juice semangka
+    - juice melon
+    - juice strawbery
+    - juice wortel
+    - juice nangka
+    - juice mangga
+    - juice tomat
+    - juice pepaya
+    - juice apel
+    - juice nanas
+    - juice buah naga
+    - mix juice
+    - milk shake coklat
+    - milk shake strawberry
+    - milk shake vanilla
+    - milk shake oreo
+    - avocado shake
+    - bubble gum shake
+    - taro shake
+    - matcha shake
+    - red velvet shake
+    - charcoal shake
+    - strawberry shake
+    - coco hazelnut shake
+    - tahu crispy
+    - jamur crispy
+    - burger
+    - risoles
+    - kentang goreng
+    - godoh crispy
+    - roti bakar mogan
+    - jajan bali
+    - laklak
+    - es krim goreng biasa
+    - es krim goreng spesial
+    - banana split
+    - pisang keju
+    - pisang goreng ori
+    - bubur kacang hijau
+    - bubur injin
+    - stik tape keju
+    - es krim rujak
+    - mixpakora
+    - terong crispy
+    - salad buah
+    - buah potong
+    - rujak kacang
+    - rujak gula
+    - rujak serut
+    - rujak colek
+    - rujak uyah sere tabia
+    - rujak cuka
+    - rujak kuah pindang
+    - singkong salju
+    - donut
+    - cone soft milk vanila
+    - cone soft milk cokelat
+    - cone soft milk mix
+    - cokelat sandae
+    - strawberry sandae
+    - salted caramel sandae
+
+- lookup: nama_menu
+  examples: |
+    - paket hemat
+    - nasi campur beras merah
+    - nasi campur bali
+    - nasi padang
+    - nasi bakar
+    - nasi goreng spesial
+    - nasi goreng pete
+    - nasi goreng terasi pete
+    - nasi goreng terasi
+    - nasi goreng kari
+    - nasi goreng cabe hijau
+    - nasi goreng biasa
+    - nasi goreng jamur
+    - nasi sela
+    - nasi genyol vegan
+    - nasi jinggo tuna
+    - nasi jinggo biasa
+    - nasi kuning
+    - bakmie bakso
+    - bakmie sosis
+    - bakmie pangsit
+    - mie ogan
+    - sate jamur
+    - tipat sate bakar
+    - tipat kables
+    - tipat plecing
+    - tipat tahu
+    - tipat potong
+    - tipat cantok
+    - tipat kuah
+    - bakso
+    - bakso spesial
+    - capcai
+    - gado-gado biasa
+    - gado-gado ekadasi
+    - jamur geprek
+    - lalapan segar
+    - terong balado
+    - terancam vegan
+    - tempe geprek
+    - terong geprek
+    - bubur ayam vegetarian
+    - bubur bali beras merah
+    - soto ayam vegetarian
+    - ramen
+    - mie kuah
+    - bihun goreng
+    - spakeju
+    - mie goreng
+    - nasi putih
+    - tempe penyet
+    - tempe panggang
+    - cah kangkung
+    - karedok
+    - serombotan
+    - gule jamur
+    - bulung buni
+    - bulung buni bumbu kables
+    - bulung biasa
+    - sayur hijau
+    - ketoprak vegan
+    - nasi tim
+    - goki coffee brown sugar
+    - goki coffee grigio
+    - goki coffee caramel
+    - goki coffee hazelnut
+    - goki coffee vanilla
+    - goki coffee latte
+    - goki coffee cappuccino
+    - goki coffee americano
+    - kopi bali
+    - kopi nescafe
+    - white coffee
+    - kopi luwak
+    - jeruk hangat
+    - jeruk nipis hangat
+    - teh hangat
+    - teh hangat jahe
+    - air hangat jahe
+    - teh tawar hangat
+    - lemon tea hangat
+    - hot milk
+    - es teler
+    - es teler spesial
+    - es campur
+    - es buah
+    - es daluman
+    - es kolak
+    - es mogan spesial
+    - es krim buah
+    - es keruk
+    - es durian
+    - es mogan
+    - es cendol
+    - es lidah buaya
+    - es jeruk
+    - es kelapa muda
+    - es gula
+    - es tea
+    - es teh tawar
+    - es teh tarik
+    - es black jack
+    - es jeruk nipis
+    - es lemon tea
+    - es dakep
+    - es teler durian
+    - susu sapi murni
+    - soda gembira
+    - es bali
+    - milk six
+    - kelapa original
+    - juice durian
+    - juice jeruk
+    - juice banana
+    - juice alpokat
+    - juice semangka
+    - juice melon
+    - juice strawbery
+    - juice wortel
+    - juice nangka
+    - juice mangga
+    - juice tomat
+    - juice pepaya
+    - juice apel
+    - juice nanas
+    - juice buah naga
+    - mix juice
+    - milk shake coklat
+    - milk shake strawberry
+    - milk shake vanilla
+    - milk shake oreo
+    - avocado shake
+    - bubble gum shake
+    - taro shake
+    - matcha shake
+    - red velvet shake
+    - charcoal shake
+    - strawberry shake
+    - coco hazelnut shake
+    - tahu crispy
+    - jamur crispy
+    - burger
+    - risoles
+    - kentang goreng
+    - godoh crispy
+    - roti bakar mogan
+    - jajan bali
+    - laklak
+    - es krim goreng biasa
+    - es krim goreng spesial
+    - banana split
+    - pisang keju
+    - pisang goreng ori
+    - bubur kacang hijau
+    - bubur injin
+    - stik tape keju
+    - es krim rujak
+    - mixpakora
+    - terong crispy
+    - salad buah
+    - buah potong
+    - rujak kacang
+    - rujak gula
+    - rujak serut
+    - rujak colek
+    - rujak uyah sere tabia
+    - rujak cuka
+    - rujak kuah pindang
+    - singkong salju
+    - donut
+    - cone soft milk vanila
+    - cone soft milk cokelat
+    - cone soft milk mix
+    - cokelat sandae
+    - strawberry sandae
+    - salted caramel sandae
+
+- lookup: kategori
+  examples: |
+    - makanan
+    - minuman
+    - dessert
+    - cemilan
+
+- lookup: rasa
+  examples: |
+    - pedas
+    - tidak pedas
+    - manis
+
+- lookup: metode_pembayaran
+  examples: |
+    - QRIS
+    - tunai
+    - debit
+    - kredit
+    - transfer

@@ -1,0 +1,181 @@
+version: "3.1"
+nlu:
+
+- lookup: menu
+  examples: |
+    - paket hemat
+    - nasi campur beras merah
+    - nasi campur bali
+    - nasi padang
+    - nasi bakar
+    - nasi goreng spesial
+    - nasi goreng pete
+    - nasi goreng terasi pete
+    - nasi goreng terasi
+    - nasi goreng kari
+    - nasi goreng cabe hijau
+    - nasi goreng biasa
+    - nasi goreng jamur
+    - nasi sela
+    - nasi genyol vegan
+    - nasi jinggo tuna
+    - nasi jinggo biasa
+    - nasi kuning
+    - bakmie bakso
+    - bakmie sosis
+    - bakmie pangsit
+    - mie ogan
+    - sate jamur
+    - tipat sate bakar
+    - tipat kables
+    - tipat plecing
+    - tipat tahu
+    - tipat potong
+    - tipat cantok
+    - tipat kuah
+    - bakso
+    - bakso spesial
+    - capcai
+    - gado-gado biasa
+    - gado-gado ekadasi
+    - jamur geprek
+    - lalapan segar
+    - terong balado
+    - terancam vegan
+    - tempe geprek
+    - terong geprek
+    - bubur ayam vegetarian
+    - bubur bali beras merah
+    - soto ayam vegetarian
+    - ramen
+    - mie kuah
+    - bihun goreng
+    - spakeju
+    - mie goreng
+    - nasi putih
+    - tempe penyet
+    - tempe panggang
+    - cah kangkung
+    - karedok
+    - serombotan
+    - gule jamur
+    - bulung buni
+    - bulung buni bumbu kables
+    - bulung biasa
+    - sayur hijau
+    - ketoprak vegan
+    - nasi tim
+    - goki coffee brown sugar
+    - goki coffee grigio
+    - goki coffee caramel
+    - goki coffee hazelnut
+    - goki coffee vanilla
+    - goki coffee latte
+    - goki coffee cappuccino
+    - goki coffee americano
+    - kopi bali
+    - kopi nescafe
+    - white coffee
+    - kopi luwak
+    - jeruk hangat
+    - jeruk nipis hangat
+    - teh hangat
+    - teh hangat jahe
+    - air hangat jahe
+    - teh tawar hangat
+    - lemon tea hangat
+    - hot milk
+    - es teler
+    - es teler spesial
+    - es campur
+    - es buah
+    - es daluman
+    - es kolak
+    - es mogan spesial
+    - es krim buah
+    - es keruk
+    - es durian
+    - es mogan
+    - es cendol
+    - es lidah buaya
+    - es jeruk
+    - es kelapa muda
+    - es gula
+    - es tea
+    - es teh tawar
+    - es teh tarik
+    - es black jack
+    - es jeruk nipis
+    - es lemon tea
+    - es dakep
+    - es teler durian
+    - susu sapi murni
+    - soda gembira
+    - es bali
+    - milk six
+    - kelapa original
+    - juice durian
+    - juice jeruk
+    - juice banana
+    - juice alpokat
+    - juice semangka
+    - juice melon
+    - juice strawbery
+    - juice wortel
+    - juice nangka
+    - juice mangga
+    - juice tomat
+    - juice pepaya
+    - juice apel
+    - juice nanas
+    - juice buah naga
+    - mix juice
+    - milk shake coklat
+    - milk shake strawberry
+    - milk shake vanilla
+    - milk shake oreo
+    - avocado shake
+    - bubble gum shake
+    - taro shake
+    - matcha shake
+    - red velvet shake
+    - charcoal shake
+    - strawberry shake
+    - coco hazelnut shake
+    - tahu crispy
+    - jamur crispy
+    - burger
+    - risoles
+    - kentang goreng
+    - godoh crispy
+    - roti bakar mogan
+    - jajan bali
+    - laklak
+    - es krim goreng biasa
+    - es krim goreng spesial
+    - banana split
+    - pisang keju
+    - pisang goreng ori
+    - bubur kacang hijau
+    - bubur injin
+    - stik tape keju
+    - es krim rujak
+    - mixpakora
+    - terong crispy
+    - salad buah
+    - buah potong
+    - rujak kacang
+    - rujak gula
+    - rujak serut
+    - rujak colek
+    - rujak uyah sere tabia
+    - rujak cuka
+    - rujak kuah pindang
+    - singkong salju
+    - donut
+    - cone soft milk vanila
+    - cone soft milk cokelat
+    - cone soft milk mix
+    - cokelat sandae
+    - strawberry sandae
+    - salted caramel sandae

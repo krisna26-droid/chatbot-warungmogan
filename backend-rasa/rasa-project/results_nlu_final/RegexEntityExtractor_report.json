@@ -1,0 +1,72 @@
+{
+  "nama_menu": {
+    "precision": 0.9047619047619048,
+    "recall": 1.0,
+    "f1-score": 0.9500000000000001,
+    "support": 19,
+    "confused_with": {}
+  },
+  "no_meja": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "menu": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "nama_menu": 2
+    }
+  },
+  "kategori": {
+    "precision": 0.2222222222222222,
+    "recall": 1.0,
+    "f1-score": 0.3636363636363636,
+    "support": 2,
+    "confused_with": {}
+  },
+  "jumlah": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "rasa": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "metode_pembayaran": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1-score": 0.888888888888889,
+    "support": 4,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.7435897435897436,
+    "recall": 0.7435897435897436,
+    "f1-score": 0.7435897435897437,
+    "support": 39
+  },
+  "macro avg": {
+    "precision": 0.41814058956916106,
+    "recall": 0.5714285714285714,
+    "f1-score": 0.45750360750360747,
+    "support": 39
+  },
+  "weighted avg": {
+    "precision": 0.6367928367928367,
+    "recall": 0.7435897435897436,
+    "f1-score": 0.6752007252007253,
+    "support": 39
+  },
+  "accuracy": 0.9383561643835616
+}

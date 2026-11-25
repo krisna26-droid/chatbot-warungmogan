@@ -1,0 +1,145 @@
+[
+  {
+    "text": "mau lihat daftar dessert dong",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 17,
+        "end": 24,
+        "value": "dessert",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "kategori",
+        "start": 17,
+        "end": 24,
+        "confidence_entity": 0.994536280632019,
+        "value": "dessert",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "minuman yang cocok diminum bareng nasi bakar apa ya?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 44,
+        "value": "nasi bakar",
+        "entity": "menu"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 34,
+        "end": 44,
+        "value": "nasi bakar",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "kategori",
+        "start": 0,
+        "end": 7,
+        "value": "minuman",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 34,
+        "end": 44,
+        "confidence_entity": 0.9995848536491394,
+        "value": "nasi bakar",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "ada pilihan makanan yang pedas gak?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 30,
+        "value": "pedas",
+        "entity": "rasa"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 12,
+        "end": 19,
+        "value": "makanan",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "rasa",
+        "start": 25,
+        "end": 30,
+        "value": "pedas",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "bisa bayar pakai QRIS atau transfer?",
+    "entities": [
+      {
+        "start": 17,
+        "end": 21,
+        "value": "QRIS",
+        "entity": "metode_pembayaran"
+      },
+      {
+        "start": 27,
+        "end": 35,
+        "value": "transfer",
+        "entity": "metode_pembayaran"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "metode_pembayaran",
+        "start": 17,
+        "end": 21,
+        "value": "QRIS",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "metode_pembayaran",
+        "start": 27,
+        "end": 35,
+        "value": "transfer",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

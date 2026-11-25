@@ -1,0 +1,506 @@
+[
+  {
+    "text": "mau lihat daftar dessert dong",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 17,
+        "end": 24,
+        "value": "dessert",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "kategori",
+        "start": 17,
+        "end": 24,
+        "confidence_entity": 0.994536280632019,
+        "value": "dessert",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "saya mau pesan nasi campur bali 2 porsi",
+    "entities": [
+      {
+        "start": 15,
+        "end": 31,
+        "value": "nasi campur bali",
+        "entity": "nama_menu"
+      },
+      {
+        "start": 32,
+        "end": 33,
+        "value": "2",
+        "entity": "jumlah"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 15,
+        "end": 31,
+        "value": "nasi campur bali",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 15,
+        "end": 31,
+        "confidence_entity": 0.9987742304801941,
+        "value": "nasi campur bali",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "jumlah",
+        "start": 32,
+        "end": 33,
+        "confidence_entity": 0.9992030262947083,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tolong bungkusin es daluman 1 ya",
+    "entities": [
+      {
+        "start": 17,
+        "end": 27,
+        "value": "es daluman",
+        "entity": "nama_menu"
+      },
+      {
+        "start": 28,
+        "end": 29,
+        "value": "1",
+        "entity": "jumlah"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 17,
+        "end": 27,
+        "value": "es daluman",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 17,
+        "end": 27,
+        "confidence_entity": 0.9996391534805298,
+        "value": "es daluman",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "jumlah",
+        "start": 28,
+        "end": 29,
+        "confidence_entity": 0.9996861219406128,
+        "value": "1",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "order sate jamur 2 makan sini",
+    "entities": [
+      {
+        "start": 6,
+        "end": 16,
+        "value": "sate jamur",
+        "entity": "nama_menu"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "value": "2",
+        "entity": "jumlah"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 6,
+        "end": 16,
+        "value": "sate jamur",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 6,
+        "end": 16,
+        "confidence_entity": 0.9918007254600525,
+        "value": "sate jamur",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "jumlah",
+        "start": 17,
+        "end": 18,
+        "confidence_entity": 0.9993890523910522,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "mau nasi goreng spesial 1 bungkus untuk meja 3",
+    "entities": [
+      {
+        "start": 4,
+        "end": 23,
+        "value": "nasi goreng spesial",
+        "entity": "nama_menu"
+      },
+      {
+        "start": 24,
+        "end": 25,
+        "value": "1",
+        "entity": "jumlah"
+      },
+      {
+        "start": 45,
+        "end": 46,
+        "value": "3",
+        "entity": "no_meja"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 4,
+        "end": 23,
+        "value": "nasi goreng spesial",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 4,
+        "end": 23,
+        "confidence_entity": 0.7096442580223083,
+        "value": "nasi goreng spesial",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "jumlah",
+        "start": 24,
+        "end": 25,
+        "confidence_entity": 0.9809744954109192,
+        "value": "1",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "no_meja",
+        "start": 45,
+        "end": 46,
+        "confidence_entity": 0.9728806614875793,
+        "value": "3",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "tambahin es teler 1 gelas dong",
+    "entities": [
+      {
+        "start": 9,
+        "end": 17,
+        "value": "es teler",
+        "entity": "nama_menu"
+      },
+      {
+        "start": 18,
+        "end": 19,
+        "value": "1",
+        "entity": "jumlah"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 9,
+        "end": 17,
+        "value": "es teler",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 9,
+        "end": 17,
+        "confidence_entity": 0.9986710548400879,
+        "value": "es teler",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "jumlah",
+        "start": 18,
+        "end": 19,
+        "confidence_entity": 0.9996860027313232,
+        "value": "1",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "cancel pesanan meja 2 ya",
+    "entities": [
+      {
+        "start": 20,
+        "end": 21,
+        "value": "2",
+        "entity": "no_meja"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "no_meja",
+        "start": 20,
+        "end": 21,
+        "confidence_entity": 0.9969015121459961,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "total sementara meja 2 berapa?",
+    "entities": [
+      {
+        "start": 21,
+        "end": 22,
+        "value": "2",
+        "entity": "no_meja"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "no_meja",
+        "start": 21,
+        "end": 22,
+        "confidence_entity": 0.9984495639801025,
+        "value": "2",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "makanan yang paling recommended di sini apa?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 0,
+        "end": 7,
+        "value": "makanan",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "minuman best seller di warung mogan apa ya?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 0,
+        "end": 7,
+        "value": "minuman",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "dessert penutup yang enak apa kak?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 0,
+        "end": 7,
+        "value": "dessert",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "minuman yang cocok diminum bareng nasi bakar apa ya?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 44,
+        "value": "nasi bakar",
+        "entity": "menu"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "nama_menu",
+        "start": 34,
+        "end": 44,
+        "value": "nasi bakar",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "kategori",
+        "start": 0,
+        "end": 7,
+        "value": "minuman",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "nama_menu",
+        "start": 34,
+        "end": 44,
+        "confidence_entity": 0.9995848536491394,
+        "value": "nasi bakar",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "ada pilihan makanan yang pedas gak?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 30,
+        "value": "pedas",
+        "entity": "rasa"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 12,
+        "end": 19,
+        "value": "makanan",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "rasa",
+        "start": 25,
+        "end": 30,
+        "value": "pedas",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "ada minuman segar gak kak?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "kategori",
+        "start": 4,
+        "end": 11,
+        "value": "minuman",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "pembayarannya bisa non tunai gak?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "metode_pembayaran",
+        "start": 23,
+        "end": 28,
+        "value": "tunai",
+        "extractor": "RegexEntityExtractor",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

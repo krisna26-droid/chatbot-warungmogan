@@ -1,0 +1,72 @@
+version: "3.1"
+
+rules:
+  - rule: balas salam
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: balas pamit
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: balas terima kasih
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - rule: jawab lokasi
+    steps:
+      - intent: ask_location
+      - action: utter_location
+
+  - rule: jawab jam operasional
+    steps:
+      - intent: ask_operational_hours
+      - action: utter_operational_hours
+
+  - rule: jawab metode pembayaran
+    steps:
+      - intent: ask_payment
+      - action: utter_payment
+
+  - rule: tampilkan menu
+    steps:
+      - intent: ask_menu
+      - action: action_tampilkan_menu
+
+  - rule: cek harga
+    steps:
+      - intent: ask_price
+      - action: action_cek_harga
+
+  - rule: rekomendasi menu
+    steps:
+      - intent: ask_recomendation
+      - action: action_rekomendasi_menu
+
+  - rule: menu pedas
+    steps:
+      - intent: ask_spicy
+      - action: action_menu_pedas
+
+  - rule: daftar minuman
+    steps:
+      - intent: ask_drink
+      - action: action_daftar_minuman
+
+  - rule: proses pesanan menu via chatbot
+    steps:
+      - intent: pesan_menu_bot
+      - action: action_proses_pesanan
+
+  - rule: batalkan pesanan via chatbot
+    steps:
+      - intent: batal_pesan
+      - action: action_batal_pesanan
+
+  - rule: cek keranjang dan pesanan aktif
+    steps:
+      - intent: cek_keranjang
+      - action: action_cek_keranjang
