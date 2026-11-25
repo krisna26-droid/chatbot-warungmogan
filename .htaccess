@@ -1,0 +1,11 @@
+@"
+RewriteEngine On
+
+# Blokir akses publik ke folder backend-rasa dan file tersembunyi (.git, .gitignore)
+RewriteRule ^backend-rasa(/|$) - [F,L]
+RewriteRule ^\. - [F,L]
+
+# Arahkan semua request domain utama ke frontend/Mogannew
+RewriteCond %{REQUEST_URI} !^/frontend/Mogannew/
+RewriteRule ^(.*)$ frontend/Mogannew/$1 [L]
+"@ | Out-File -FilePath .htaccess -Encoding ascii

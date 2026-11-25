@@ -1,8 +1,7 @@
 <?php
 // Pastikan tidak ada spasi/enter kosong sebelum tag <?php di atas
 error_reporting(0); // Mencegah notice/warning PHP merusak JSON output
-
-define('RASA_API_URL', 'http://127.0.0.1:5005/webhooks/rest/webhook');
+require_once __DIR__ . '/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'send_chat') {
     header('Content-Type: application/json; charset=utf-8');

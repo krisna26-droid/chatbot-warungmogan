@@ -1,15 +1,6 @@
 <?php
 session_start();
-
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_warung_mogan";
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Koneksi database gagal: " . $conn->connect_error);
-}
+require_once __DIR__ . '/../config.php';
 
 // Cek apakah kolom metode_pembayaran sudah tersedia di tabel keranjang
 $hasMetodeCol = false;

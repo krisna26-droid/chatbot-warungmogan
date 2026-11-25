@@ -1,18 +1,7 @@
 <?php
 session_start();
-
-// Koneksi langsung ke database MySQL (sesuaikan nama database Anda jika berbeda)
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_warung_mogan"; // Ganti dengan nama database Warung Mogan Anda
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-// Periksa koneksi
-if ($conn->connect_error) {
-    die(json_encode(["status" => "error", "message" => "Koneksi database gagal: " . $conn->connect_error]));
-}
+$config_database_error_json = true;
+require_once __DIR__ . '/config.php';
 // Pastikan request menggunakan metode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ambil data yang dikirim oleh Chatbot Rasa

@@ -1,22 +1,12 @@
 <?php
 session_start();
+require_once __DIR__ . '/config.php';
 
 // 1. Simpan nomor meja dari URL QR code ke sesi jika tersedia
 if (isset($_GET['meja']) && $_GET['meja'] !== '') {
     $_SESSION['no_meja'] = htmlspecialchars(trim($_GET['meja']), ENT_QUOTES, 'UTF-8');
 }
 $noMeja = isset($_SESSION['no_meja']) ? $_SESSION['no_meja'] : '-';
-
-// 2. Koneksi ke Database (cukup sekali)
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_warung_mogan";
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Koneksi database gagal: " . $conn->connect_error);
-}
 
 // 3. Cek Status Pesanan Aktif Pelanggan di Meja Ini
 if (isset($_SESSION['id_pesanan_aktif'])) {

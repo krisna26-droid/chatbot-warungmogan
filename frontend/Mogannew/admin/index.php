@@ -8,22 +8,7 @@ if (!isset($_SESSION['status_login']) || $_SESSION['status_login'] !== true) {
 }
 // ----------------------------------------
 
-// 1. Deklarasikan variabel koneksi terlebih dahulu
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_warung_mogan";
-
-// 2. Buat koneksi database dan cek error-nya
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Koneksi database gagal: " . $conn->connect_error);
-}
-// 2. Buat koneksi database dan cek error-nya
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Koneksi database gagal: " . $conn->connect_error);
-}
+require_once __DIR__ . '/../config.php';
 
 // --- TAMBAHKAN KODINGAN INI DI SINI ---
 // Ambil tanggal mulai dan selesai dari URL (GET), jika kosong gunakan default hari ini

@@ -7,6 +7,7 @@ session_set_cookie_params([
     'samesite' => 'Lax'
 ]);
 session_start();
+require_once __DIR__ . '/config.php';
 
 // Opsi hapus sesi jika pelanggan menekan tombol 'Selesai / Keluar'
 if (isset($_GET['aksi']) && $_GET['aksi'] === 'selesai_keluar') {
@@ -16,16 +17,6 @@ if (isset($_GET['aksi']) && $_GET['aksi'] === 'selesai_keluar') {
     session_destroy();
     header("Location: index.php");
     exit;
-}
-
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_warung_mogan";
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Koneksi database gagal: " . $conn->connect_error);
 }
 
 // Simpan nomor meja dari URL jika ada
