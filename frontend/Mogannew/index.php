@@ -5,7 +5,19 @@ session_start();
 require_once __DIR__ . '/config.php';
 
 if (isset($_GET['meja'])) {
-    $_SESSION['meja'] = htmlspecialchars($_GET['meja'], ENT_QUOTES, 'UTF-8');
+    $mejaDariQr = trim((string)$_GET['meja']);
+    if (preg_match('/^\d{1,2}$/', $mejaDariQr) && (int)$mejaDariQr >= 1 && (int)$mejaDariQr <= 60) {
+        $mejaDariQr = (string)(int)$mejaDariQr;
+        $mejaSebelumnya = $_SESSION['no_meja'] ?? $_SESSION['meja'] ?? null;
+
+        // Jangan gunakan kembali keranjang/pesanan sesi dari meja yang berbeda.
+        if ($mejaSebelumnya !== null && (string)$mejaSebelumnya !== $mejaDariQr) {
+            unset($_SESSION['id_pesanan_aktif'], $_SESSION['keranjang']);
+        }
+
+        $_SESSION['meja'] = $mejaDariQr;
+        $_SESSION['no_meja'] = $mejaDariQr;
+    }
 }
 $nomorMejaAktif = $_SESSION['meja'] ?? '';
 
@@ -360,10 +372,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         const sendBtn      = document.getElementById('sendBtn');
 
         // Pertahankan senderId agar keranjang chatbot tidak reset saat refresh
-        const nomorMeja = "<?= $nomorMejaAktif ?>";
+        const nomorMeja = <?= json_encode($nomorMejaAktif) ?>;
+        const senderPrefix = nomorMeja ? 'meja_' + nomorMeja + '_' : 'pelanggan_';
         let senderId = sessionStorage.getItem('mogan_sender_id');
-        if (!senderId) {
-            senderId = (nomorMeja ? 'meja_' + nomorMeja + '_' : 'pelanggan_') + Math.random().toString(36).substring(2, 9);
+        if (!senderId || !senderId.startsWith(senderPrefix)) {
+            senderId = senderPrefix + Math.random().toString(36).substring(2, 9);
             sessionStorage.setItem('mogan_sender_id', senderId);
         }
 

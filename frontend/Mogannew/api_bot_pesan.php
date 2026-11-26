@@ -5,7 +5,14 @@ require_once __DIR__ . '/config.php';
 // Pastikan request menggunakan metode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ambil data yang dikirim oleh Chatbot Rasa
-    $no_meja = $_POST['no_meja'] ?? '1'; // Default meja jika tidak ada
+    // Utamakan meja dari QR yang disimpan pada sesi pengunjung.
+    $no_meja = $_SESSION['no_meja'] ?? $_SESSION['meja'] ?? $_POST['no_meja'] ?? '1';
+    $no_meja = trim((string)$no_meja);
+    if (!preg_match('/^\d{1,2}$/', $no_meja) || (int)$no_meja < 1 || (int)$no_meja > 60) {
+        echo json_encode(["status" => "error", "message" => "Nomor meja tidak valid."]);
+        exit;
+    }
+    $no_meja = (string)(int)$no_meja;
     $id_menu = (int)($_POST['id_menu'] ?? 0);
     $jumlah  = (int)($_POST['jumlah'] ?? 1);
     $catatan = trim($_POST['catatan'] ?? '');

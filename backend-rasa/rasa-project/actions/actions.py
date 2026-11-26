@@ -131,6 +131,21 @@ def jalankan_query(sql: str, params=None):
         koneksi.close()
 
 
+def ambil_nomor_meja_tracker(tracker: Tracker) -> Optional[str]:
+    """Resolve table number from explicit Rasa slots/entities or QR sender ID."""
+    nomor_meja = tracker.get_slot("no_meja") or next(
+        tracker.get_latest_entity_values("no_meja"), None
+    )
+    if nomor_meja is not None and str(nomor_meja).strip():
+        return str(nomor_meja).strip()
+
+    # Chat page creates sender IDs such as meja_40_ab12xyz from the scanned QR.
+    match = re.match(r"^meja_(\d{1,2})(?:_|$)", str(getattr(tracker, "sender_id", "")))
+    if match and 1 <= int(match.group(1)) <= 60:
+        return str(int(match.group(1)))
+    return None
+
+
 def ambil_kolom_menu() -> set:
     global _KOLOM_MENU_CACHE
     if _KOLOM_MENU_CACHE is not None:
@@ -694,11 +709,7 @@ class ActionRekomendasiMenu(Action):
     ) -> List[Dict[Text, Any]]:
         teks_user = tracker.latest_message.get("text") or ""
         teks_lower = teks_user.lower()
-        nomor_meja = (
-            tracker.get_slot("no_meja")
-            or next(tracker.get_latest_entity_values("no_meja"), None)
-            or "1"
-        )
+        nomor_meja = ambil_nomor_meja_tracker(tracker) or "1"
 
         try:
             # 1. Pertanyaan pairing (minuman cocok dengan makanan, atau makanan/cemilan cocok dengan minuman)
@@ -914,11 +925,7 @@ class ActionDaftarMinuman(Action):
         nama_menu = tracker.get_slot("nama_menu") or next(
             tracker.get_latest_entity_values("nama_menu"), None
         )
-        nomor_meja = (
-            tracker.get_slot("no_meja")
-            or next(tracker.get_latest_entity_values("no_meja"), None)
-            or "1"
-        )
+        nomor_meja = ambil_nomor_meja_tracker(tracker) or "1"
 
         try:
             # 1. Jika menanyakan minuman yang cocok dengan makanan/pesanan
@@ -1044,11 +1051,7 @@ class ActionProsesPesanan(Action):
             or next(tracker.get_latest_entity_values("jumlah"), None),
             default=1,
         )
-        nomor_meja = (
-            tracker.get_slot("no_meja")
-            or next(tracker.get_latest_entity_values("no_meja"), None)
-            or "1"
-        )
+        nomor_meja = ambil_nomor_meja_tracker(tracker) or "1"
         is_bungkus = deteksi_bungkus(teks_user) or (
             nama_menu is not None and deteksi_bungkus(str(nama_menu))
         )
@@ -1176,11 +1179,7 @@ class ActionBatalPesanan(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        nomor_meja = (
-            tracker.get_slot("no_meja")
-            or next(tracker.get_latest_entity_values("no_meja"), None)
-            or "1"
-        )
+        nomor_meja = ambil_nomor_meja_tracker(tracker) or "1"
         nama_menu = tracker.get_slot("nama_menu") or next(
             tracker.get_latest_entity_values("nama_menu"), None
         )
@@ -1272,11 +1271,7 @@ class ActionCekKeranjang(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        nomor_meja = (
-            tracker.get_slot("no_meja")
-            or next(tracker.get_latest_entity_values("no_meja"), None)
-            or "1"
-        )
+        nomor_meja = ambil_nomor_meja_tracker(tracker) or "1"
 
         try:
             pesanan_aktif, detail_rows = ambil_pesanan_aktif_terakhir(nomor_meja)

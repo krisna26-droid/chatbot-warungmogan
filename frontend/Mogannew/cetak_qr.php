@@ -1,6 +1,5 @@
 <?php
-// Ganti link ini dengan URL Cloudflare Tunnel web (localhost:80) yang sedang aktif
-$base_url = "https://often-rug-risks-myth.trycloudflare.com/Mogannew/?meja=";
+$base_url = "https://warungmogan.store/?meja=";
 $jumlah_meja = 60;
 ?>
 <!DOCTYPE html>
