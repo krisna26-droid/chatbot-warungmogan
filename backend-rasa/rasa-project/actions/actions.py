@@ -1,4 +1,5 @@
 import logging
+import os
 import re
 from typing import Any, Dict, List, Optional, Text
 
@@ -11,10 +12,11 @@ logger = logging.getLogger(__name__)
 
 # ====== SESUAIKAN JIKA PERLU ======
 DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",
-    "password": "",
-    "database": "db_warung_mogan",
+    "host": os.getenv("DB_HOST", "localhost"),
+    "port": int(os.getenv("DB_PORT", 3306)),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASS", ""),
+    "database": os.getenv("DB_NAME", "db_warung_mogan"),
 }
 # ==================================
 
